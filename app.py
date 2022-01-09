@@ -29,7 +29,7 @@ def output():
     elif (int(request.form['num_input']) >= 800 and int(request.form['num_input']) < 901):
         flash("Your score is Excellent!!! ")
     else:
-        flash("Your score is Invalid. Maximum limit is 900 and Minimum limit is  ")
+        flash("Your score is Invalid. Maximum limit is 900 and Minimum limit is 300. ")
     return render_template("index.html")
 
 
