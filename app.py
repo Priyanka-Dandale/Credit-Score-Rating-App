@@ -20,7 +20,7 @@ def index():
 @app.route("/submit", methods=["POST","GET"])
 def output():
     flash("Hi, you entered your credit score = " + str(request.form['num_input'])+".")
-    if int(request.form['num_input']) < 350:
+    if (int(request.form['num_input']) >= 300 and int(request.form['num_input']) < 350):
         flash("Your score is Poor!!! ")
     elif (int(request.form['num_input']) >= 350 and int(request.form['num_input']) < 600):
         flash("Your score is Average!!! ")
