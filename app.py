@@ -20,15 +20,16 @@ def index():
 @app.route("/submit", methods=["POST","GET"])
 def output():
     flash("Hi, you entered your credit score = " + str(request.form['num_input'])+".")
-    if int(request.form['num_input']) < 200:
+    if int(request.form['num_input']) < 350:
         flash("Your score is Poor!!! ")
-    elif (int(request.form['num_input']) >= 200 and int(request.form['num_input']) < 450):
+    elif (int(request.form['num_input']) >= 350 and int(request.form['num_input']) < 600):
         flash("Your score is Average!!! ")
-    elif (int(request.form['num_input']) >= 450 and int(request.form['num_input']) < 650):
+    elif (int(request.form['num_input']) >= 600 and int(request.form['num_input']) < 800):
         flash("Your score is Good!!! ")
-    else:
+    elif (int(request.form['num_input']) >= 800 and int(request.form['num_input']) < 901):
         flash("Your score is Excellent!!! ")
+    else:
+        flash("Your score is Invalid. Maximum limit is 900 and Minimum limit is  ")
     return render_template("index.html")
-
 
 
