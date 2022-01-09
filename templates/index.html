@@ -1,0 +1,32 @@
+<!-- You will not be able to see this text on webpage. comments are mentioned here -->
+
+
+<!DOCTYPE html> <!--document type is html-->
+<html> 
+    <head>  
+        <meta charset="UTF-8">                                                       <!--set character to unicode-8-->
+        <title>Check Your Credit Score Rating</title>                                <!--title for your web page-->
+        <link rel="stylesheet" href="{{url_for('static',filename='CSS/main.css')}}"> <!--linking css file for styling-->
+    </head>
+    <body>
+        <h1>Check Your Credit Score Rating </h1>                                     <!--heading for your web page-->
+        <img src="https://raw.githubusercontent.com/Priyanka-Dandale/Credit-Score-Rating-App/main/credit-score-gauge-img1.jpg" id="image"> 
+                                                  <!--image appearing on your web page and giving it id or variable name as 'image'-->
+        
+        <br>                                      <!--break line-->
+
+        <form action="submit" method="post">      <!--The method attribute specifies how to send form-data (the form-data is 
+                                                     sent to the page specified in the action attribute) and post method for HTTP post transaction-->
+
+        {% for message in get_flashed_messages()%} <!--flashing used to record a message at the end of a request and access 
+                                                     it next request and only next request-->
+
+           <p> {{message}} </p>                    <!--return your output or message in paragraph form-->
+        {% endfor %}
+        <br>
+        <input type="number" name="num_input">     <!--takes the user input and remember it as num_input-->
+        <br>                                       
+        <input type="submit" value="SUBMIT" id="submitbutton">    <!--on clicking SUBMIT button (with submitbutton id)on web page-->
+        </form>
+    </body>
+</html>
